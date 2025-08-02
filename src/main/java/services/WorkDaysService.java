@@ -37,7 +37,7 @@ public class WorkDaysService {
     }
 
     public void doAppointment(Date currentDate, Appointment appointment, Long userId) {
-        Optional<WorkDays> workDays = workDaysRepository.findByCreationDateAndUserId(currentDate,userId);
+        Optional<WorkDays> workDays = workDaysRepository.findByCreatedAtAndEmployee_Id(currentDate,userId);
         WorkDays workDayFinal = workDays.get();
         if (!workDays.isPresent()) {
 

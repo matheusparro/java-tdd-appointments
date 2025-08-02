@@ -93,7 +93,7 @@ public class WorkDaysServiceTest {
         workDays.setAppointments(new ArrayList<>());
 
         // Configurando o mock para retornar o objeto WorkDays quando chamado pelo método findByCreationDateAndUserId
-        Mockito.when(workDaysRepository.findByCreationDateAndUserId(new Date(), 1L)).thenReturn(Optional.of(workDays));
+        Mockito.when(workDaysRepository.findByCreatedAtAndEmployee_Id(new Date(), 1L)).thenReturn(Optional.of(workDays));
 
         // Executando o método doAppointment
         workDaysService.doAppointment(new Date(),appointment, 1L);
@@ -123,7 +123,7 @@ public class WorkDaysServiceTest {
 
         // Configurando o mock para retornar o objeto WorkDays quando chamado pelo método findByCreationDate
         Date specificDate = new Date();
-        Mockito.when(workDaysRepository.findByCreationDateAndUserId(specificDate, 1L))
+        Mockito.when(workDaysRepository.findByCreatedAtAndEmployee_Id(specificDate, 1L))
                 .thenReturn(Optional.of(workDays));
 
 

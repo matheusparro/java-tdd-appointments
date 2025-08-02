@@ -12,5 +12,6 @@ public interface WorkDaysRepository extends JpaRepository<WorkDays, String> {
 
     // Método para criar WorkDays
 
-    Optional<WorkDays> findByCreationDateAndUserId(Date date, Long userId);
+    Optional<WorkDays> findByCreatedAtAndEmployee_Id(Date createdAt, Long employeeId);
+
 }
